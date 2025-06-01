@@ -35,6 +35,14 @@ JOIN_REQUEST_ENABLE = os.environ.get("JOIN_REQUEST_ENABLED", None)
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
+# Verify Info :-
+VERIFY_MODE = bool(environ.get('VERIFY_MODE', True)) # Set True or False
+
+# If Verify Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
+SHORTLINK_URL = environ.get("SHORTLINK_URL", "gplinks.com") # shortlink domain without https://
+SHORTLINK_API = environ.get("SHORTLINK_API", "cceb5d3549843a200922be55c527afd29cf7ec03") # shortlink api
+VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/+1GMGjTAOYbc0ZDE1") # how to open link 
+
 #start message
 START_PIC = os.environ.get("START_PIC","https://ik.imagekit.io/whriodigz/Leonardo_Phoenix_10_Design_a_bold_flashy_and_ultrastylish_logo_3%20(1).jpg?updatedAt=1748697291211")
 START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
