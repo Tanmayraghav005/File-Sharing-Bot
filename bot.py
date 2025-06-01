@@ -13,25 +13,25 @@ from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE
 
 
 ascii_art = """
-░█████╗░░█████╗░██████╗░███████╗██╗░░██╗██████╗░░█████╗░████████╗███████╗
-██╔══██╗██╔══██╗██╔══██╗██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗╚══██╔══╝╚════██║
-██║░░╚═╝██║░░██║██║░░██║█████╗░░░╚███╔╝░██████╦╝██║░░██║░░░██║░░░░░███╔═╝
-██║░░██╗██║░░██║██║░░██║██╔══╝░░░██╔██╗░██╔══██╗██║░░██║░░░██║░░░██╔══╝░░
-╚█████╔╝╚█████╔╝██████╔╝███████╗██╔╝╚██╗██████╦╝╚█████╔╝░░░██║░░░███████╗
-░╚════╝░░╚════╝░╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░░╚════╝░░░░╚═╝░░░╚══════╝
+  ___        _                  _____                   _            
+ / _ \      (_)                /  __ \                 | |           
+/ /_\ \_ __  _ _ __ ___   ___  | /  \/ ___  _   _ _ __ | |_ ___ _ __ 
+|  _  | '_ \| | '_ ` _ \ / _ \ | |    / _ \| | | | '_ \| __/ _ \ '__|
+| | | | | | | | | | | | |  __/ | \__/\ (_) | |_| | | | | ||  __/ |   
+\_| |_/_| |_|_|_| |_| |_|\___|  \____/\___/ \__,_|_| |_|\__\___|_|   
 """
 
 class Bot(Client):
     def __init__(self):
         super().__init__(
-            name="Bot",
-            api_hash=API_HASH,
-            api_id=APP_ID,
+            name="Animeverse_epbot",
+            api_hash="d23cbbfe1fecacc17dd8ae7f9d3a6206",
+            api_id="25966339",
             plugins={
                 "root": "plugins"
             },
             workers=TG_BOT_WORKERS,
-            bot_token=TG_BOT_TOKEN
+            bot_token="7642374864:AAFIzAdoH2-W9xwB4MWfX7dmkHKFVfIaU1s"
         )
         self.LOGGER = LOGGER
 
@@ -46,7 +46,7 @@ class Bot(Client):
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
                     link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
-                self.invitelink = link
+                self.invitelink ="https://t.me/All_Anime_Counter"
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
                 self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
